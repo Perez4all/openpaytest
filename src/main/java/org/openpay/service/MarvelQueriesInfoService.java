@@ -1,7 +1,7 @@
 package org.openpay.service;
 
 
-import org.openpay.model.MarvelQueriesInfo;
+import org.openpay.client.model.MarvelQueriesInfo;
 
 import java.util.List;
 

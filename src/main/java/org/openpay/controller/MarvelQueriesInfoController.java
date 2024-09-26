@@ -1,6 +1,6 @@
 package org.openpay.controller;
 
-import org.openpay.dto.MarvelQueriesInfo;
+import org.openpay.client.dto.MarvelQueriesInfo;
 import org.openpay.mapper.MarvelQueriesInfoMapper;
 import org.openpay.service.MarvelQueriesInfoService;
 import org.springframework.beans.factory.annotation.Autowired;

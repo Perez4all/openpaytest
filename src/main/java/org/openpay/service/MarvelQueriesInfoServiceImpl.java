@@ -1,7 +1,7 @@
 package org.openpay.service;
 
-import org.openpay.model.MarvelQueriesInfo;
-import org.openpay.repository.MarvelQueriesInfoRepository;
+import org.openpay.client.model.MarvelQueriesInfo;
+import org.openpay.client.repository.MarvelQueriesInfoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

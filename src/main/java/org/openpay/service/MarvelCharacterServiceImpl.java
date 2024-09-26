@@ -6,8 +6,8 @@ import lombok.extern.java.Log;
 import org.openpay.client.MarvelClient;
 import org.openpay.client.dto.Character;
 import org.openpay.client.dto.CharactersResponse;
-import org.openpay.model.MarvelQueriesInfo;
-import org.openpay.repository.MarvelQueriesInfoRepository;
+import org.openpay.client.model.MarvelQueriesInfo;
+import org.openpay.client.repository.MarvelQueriesInfoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -37,7 +37,7 @@ public class MarvelCharacterServiceImpl implements MarvelCharacterService {
     @Autowired
     public MarvelCharacterServiceImpl(MarvelClient marvelClient,
                                       MarvelQueriesInfoRepository marvelQueriesInfoRepository,
-                                      @Qualifier("slashObjectMapper") ObjectMapper objectMapper){
+                                      ObjectMapper objectMapper){
         this.marvelClient = marvelClient;
         this.marvelQueriesInfoRepository = marvelQueriesInfoRepository;
         this.objectMapper = objectMapper;
