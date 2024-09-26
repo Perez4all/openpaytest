@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+
+
+marvel:
+  private:
+    key: 1c62ad5dbca1153935c5b96e4f39803ecb9feafe
+  public:
+    key: 59d5c35f24c5888ccdd3338a308f69ee
