@@ -19,8 +19,11 @@ public interface MarvelQueriesInfoMapper {
     List<MarvelQueriesInfo> toDto(List<org.openpay.client.model.MarvelQueriesInfo> marvelQueriesInfo);
 
     @Named("byteToString")
-    default String byteToString(byte[] bytes){
-        return new String(bytes, StandardCharsets.UTF_8);
+    default String byteToString(byte[] bytes) {
+        if (bytes != null) {
+            return new String(bytes, StandardCharsets.UTF_8);
+        }
+        return "";
     }
 
 }

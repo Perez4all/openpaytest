@@ -64,11 +64,18 @@ public class MarvelCharacterServiceImpl implements MarvelCharacterService {
     }
 
     @Override
+
     public Character getCharacterById(Long id) {
-        ResponseEntity<CharactersResponse> characterResponse = marvelClient.getCharacterById(createRequestAuthParams(null), id);
+        Map<String, String> requestAuthParams = createRequestAuthParams(null);
+        ResponseEntity<CharactersResponse> characterResponse = marvelClient.getCharacterById(requestAuthParams, id);
         if (characterResponse.getStatusCode() == HttpStatus.OK) {
             CharactersResponse body = characterResponse.getBody();
             if (body != null && body.getData() != null && !body.getData().getResults().isEmpty()) {
+                try {
+                    saveResponse(objectMapper.writeValueAsString(body), requestAuthParams.get("hash"));
+                } catch (JsonProcessingException e) {
+                    throw new RuntimeException(e);
+                }
                 return body.getData().getResults().get(0);
             }
         }
